@@ -1,4 +1,7 @@
-def binary(lst):
+def binary(file):
+    with open(file, 'r') as f:
+        lst = f.readlines()
+
     gamma, epsilon = '', ''
     for i in range(len(lst[0])-1):
         counter = {'0':0, '1':0}
@@ -9,8 +12,3 @@ def binary(lst):
         else:
             gamma,epsilon=gamma+'1',epsilon+'0'
     return int(gamma,2)*int(epsilon,2)
-
-
-f = open('day3_INPUT.txt', 'r')
-lst = f.readlines()
-print(binary(lst))

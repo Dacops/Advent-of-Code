@@ -1,4 +1,7 @@
-def life_support(lst):
+def life_support(file):
+    with open(file, 'r') as f:
+        lst = f.readlines()
+
     def oxygen(lst):
         for i in range(len(lst[0])-1):
             counter = {'0':0, '1':0}
@@ -28,8 +31,3 @@ def life_support(lst):
                 return int(lst[0],2)
 
     return oxygen(lst)*CO2(lst)
-
-
-f = open('day3_INPUT.txt', 'r')
-lst = f.readlines()
-print(life_support(lst))

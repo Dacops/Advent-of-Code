@@ -1,4 +1,7 @@
-def counter(lst):
+def counter(file):
+    with open(file, 'r') as f:
+        lst = f.readlines()
+
     count = 0
     for i in range(len(lst)-3):
         ant = int(lst[i])
@@ -6,7 +9,3 @@ def counter(lst):
         if num > ant:
             count+=1
     return count
-
-f = open('day1_INPUT.txt', 'r')
-lst = f.readlines()
-print(counter(lst))
