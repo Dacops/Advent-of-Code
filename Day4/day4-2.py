@@ -35,7 +35,3 @@ def bingo(file):
             if [] in rows_and_columns:
                 board_number = int((rows_and_columns.index([]))/10)
                 rows_and_columns = rows_and_columns[:10*int(board_number)] + rows_and_columns[10*(int(board_number)+1):]
-
-
-
-
