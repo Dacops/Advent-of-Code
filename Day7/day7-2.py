@@ -19,5 +19,3 @@ def fuel(file):
         mov=abs(int(element)-avg)
         total+=fac(mov)
     return total
-
-print(fuel('C:\\Users\\david\\OneDrive\\Desktop\\GitHub\\AoC_21\\Day7\\day7_INPUT.txt'))
