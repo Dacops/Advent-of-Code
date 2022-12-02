@@ -5,7 +5,7 @@
 using namespace std;
 
 
-vector<int> _calories;                  // index = elf; value = num of calories;
+vector<int> _calories;                                      // index = elf; value = num of calories;
 int elf = 0;
 
 void readInput() {
@@ -15,7 +15,7 @@ void readInput() {
 
     while (getline(cin, line)) {
 
-        if (int(line[0])==13) {         // Vertical Tab, ASCII code: 13;
+        if (int(line[0])==13 || int(line[0]==10)) {         // CR, ASCII code: 13 or LF, ASCII code: 10;
             elf++;
             _calories.resize((elf+1)*sizeof(int));
         }
