@@ -15,7 +15,7 @@ void readInput() {
 
     while (getline(cin, line)) {
 
-        if (int(line[0])==13 || int(line[0]==10)) {         // CR, ASCII code: 13 or LF, ASCII code: 10;
+        if (int(line[0])==13 || int(line[0])==10) {         // CR, ASCII code: 13 or LF, ASCII code: 10;
             elf++;
             _calories.resize((elf+1)*sizeof(int));
         }
