@@ -40,7 +40,7 @@ return:&scizors&rock&paper&\\
 \end{pmatrix}
 $$
 
-`Losing is equal to increasing the index of the vector by 2 % 3.`
+`Losing is equal to increasing the index of the vector by 2 % 3. Once the vector only has 3 Values we can use -1 % 3 instead.`
 
 **Drawing:**
 `Given a vector: `
