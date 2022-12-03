@@ -35,8 +35,8 @@ A, B, C, these can be given as ASCII calculations.**
 
 $$
 \begin{pmatrix}
-played:&rock&paper&scizors&\\
-return:&scizors&rock&paper&\\
+played:&rock&paper&scissors&\\
+return:&scissors&rock&paper&\\
 \end{pmatrix}
 $$
 
@@ -47,8 +47,8 @@ $$
 
 $$
 \begin{pmatrix}
-played:&rock&paper&scizors&\\
-return:&rock&paper&scizors&\\
+played:&rock&paper&scissors&\\
+return:&rock&paper&scissors&\\
 \end{pmatrix}
 $$
 
@@ -59,8 +59,8 @@ $$
 
 $$
 \begin{pmatrix}
-played:&rock&paper&scizors&\\
-return:&paper&scizors&rock&\\
+played:&rock&paper&scissors&\\
+return:&paper&scissors&rock&\\
 \end{pmatrix}
 $$
 
