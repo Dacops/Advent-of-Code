@@ -2,12 +2,15 @@
 
 ## > evaluateInput()
 **With score combinations given as:**
-$$\begin{matrix}
+
+$$
+\begin{matrix}
 score&A&B&C\\
 X&3&0&6\\
 Y&6&3&0\\
 Z&0&6&3\\
-\end{matrix}$$
+\end{matrix}
+$$
 
 **This can be expressed with the function:**
 * `line - column=0 => score=3.`
@@ -29,24 +32,36 @@ A, B, C, these can be given as ASCII calculations.**
 ## > changeInput()
 **Losing:**
 `Given a vector: `
-$$\begin{pmatrix}
+
+$$
+\begin{pmatrix}
 played:&rock&paper&scizors&\\
 return:&scizors&rock&paper&\\
-\end{pmatrix}$$
+\end{pmatrix}
+$$
+
 `Losing is equal to increasing the index of the vector by 2 % 3.`
 
 **Drawing:**
 `Given a vector: `
-$$\begin{pmatrix}
+
+$$
+\begin{pmatrix}
 played:&rock&paper&scizors&\\
 return:&rock&paper&scizors&\\
-\end{pmatrix}$$
+\end{pmatrix}
+$$
+
 `Drawing is equal to returning the same vector index.`
 
 **Losing:**
 `Given a vector: `
-$$\begin{pmatrix}
+
+$$
+\begin{pmatrix}
 played:&rock&paper&scizors&\\
 return:&paper&scizors&rock&\\
-\end{pmatrix}$$
+\end{pmatrix}
+$$
+
 `Winning is equal to increasing the index of the vector by 1 % 3.`
