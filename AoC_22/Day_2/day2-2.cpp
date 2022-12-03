@@ -6,15 +6,6 @@ using namespace std;
 
 
 vector<vector<char>> _inputs;
-map<char, char> _lose = {
-        { 'A', 'Z'}, { 'B', 'X'}, { 'C', 'Y' }
-};
-map<char, char> _draw = {
-        { 'A', 'X'}, { 'B', 'Y'}, { 'C', 'Z' }
-};
-map<char, char> _win = {
-        { 'A', 'Y'}, { 'B', 'Z'}, { 'C', 'X' }
-};
 
 void readInput() {
 
@@ -31,12 +22,13 @@ void readInput() {
 
 void changeInput() {
 
-    for (int i=0; i<(int)_inputs.size()-1; i++) {
+    vector <char> outcomes = {'X','Y','Z'};
 
+    for (int i=0; i<(int)_inputs.size()-1; i++) {
         switch(_inputs[i][1]) {
-            case('X'): { _inputs[i][1] = _lose[_inputs[i][0]]; break; }
-            case('Y'): { _inputs[i][1] = _draw[_inputs[i][0]]; break; }
-            case('Z'): { _inputs[i][1] = _win[_inputs[i][0]]; break; }
+            case('X'): { _inputs[i][1] = outcomes[(_inputs[i][0]-('A'-2))%3]; break;}
+            case('Y'): { _inputs[i][1] = outcomes[_inputs[i][0]-'A']; break; }
+            case('Z'): { _inputs[i][1] = outcomes[(_inputs[i][0]-('A'-1))%3]; break; }
         }
     }
 }
