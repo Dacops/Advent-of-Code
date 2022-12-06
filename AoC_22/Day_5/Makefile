@@ -8,5 +8,7 @@ run1: day5-1
 	./day5-1 < input.txt
 run2: day5-2
 	./day5-2 < input.txt
+clean:
+	rm -f day5-1 day5-2
 
 
