@@ -1,14 +1,17 @@
 CFLAGS = -O3 -std=c++11 -Wall
+TARGET1 = day3-1
+TARGET2 = day3-2
+INPUT	= input.txt
 
-day3: day3-1.cpp day3-2.cpp
-	g++ $(CFLAGS) day3-1.cpp -o day3-1
-	g++ $(CFLAGS) day3-2.cpp -o day3-2
+all: $(TARGET1).cpp $(TARGET2).cpp
+	g++ $(CFLAGS) $(TARGET1).cpp -o $(TARGET1)
+	g++ $(CFLAGS) $(TARGET2).cpp -o $(TARGET2)
 
-run1: day3-1
-	./day3-1 < input.txt
-run2: day3-2
-	./day3-2 < input.txt
+run1: $(TARGET1)
+	./$(TARGET1) < $(INPUT)
+run2: $(TARGET2)
+	./$(TARGET2) < $(INPUT)
 clean:
-	rm -f day5-1 day5-2
+	rm -f $(TARGET1) $(TARGET2)
 
 
