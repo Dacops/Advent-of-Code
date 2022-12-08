@@ -69,7 +69,7 @@ void parseInput() {
             if(!strcmp(commands[1],"cd")) {
 
                 // remove '\r';
-                char *dir;
+                char dir[strlen(commands[2])-1];
                 sscanf(commands[2], "%s\r", dir);
 
                 // go back one level
