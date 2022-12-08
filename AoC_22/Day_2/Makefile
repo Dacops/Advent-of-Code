@@ -11,7 +11,7 @@ run1: $(TARGET1)
 	./$(TARGET1) < $(INPUT)
 run2: $(TARGET2)
 	./$(TARGET2) < $(INPUT)
-clean:
+clear:
 	rm -f $(TARGET1) $(TARGET2)
 
 

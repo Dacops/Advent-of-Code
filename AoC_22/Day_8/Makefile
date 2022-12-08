@@ -1,6 +1,6 @@
 CFLAGS = -O3 -std=c++11 -Wall
-TARGET1 = day1-1
-TARGET2 = day1-2
+TARGET1 = day8-1
+TARGET2 = day8-2
 INPUT	= input.txt
 
 all: $(TARGET1).cpp $(TARGET2).cpp
