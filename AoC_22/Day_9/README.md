@@ -10,8 +10,9 @@ for(int i=0; i<(int)_matrix.size(); i++) {
         cout << endl;
     }
 ```
-**The output will be something like:**
-![Alt text](https://github.com/Dacops/AoC/blob/main/AoC_22/Day_9/Matrix.png)
-
 **Colours can be by changing the 1st printf(path colour) or 2nd printf(default colour)**
 **Here´s a list of some ANSI Colour Codes:** https://talyian.github.io/ansicolors/
+
+**The output will be something like:**
+
+![Alt text](https://github.com/Dacops/AoC/blob/main/AoC_22/Day_9/Matrix.png)
