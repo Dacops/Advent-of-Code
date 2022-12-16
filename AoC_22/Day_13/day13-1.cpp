@@ -112,8 +112,6 @@ bool isRight(string left, string right) {
     int smallestSet = min((int)leftmap.size(), (int)rightmap.size());
     for(int i=0; i<smallestSet; i++) {
 
-        cout << i << ": " << leftmap[i].first << " -> " << leftmap[i].second << " / " << rightmap[i].first << " -> " << rightmap[i].second << endl;
-
         // don't run on ',' entries, only needed to verify offset
         if(leftmap[i].second!=-2 && rightmap[i].second!=-2) {
             // empty lists
@@ -136,7 +134,6 @@ bool isRight(string left, string right) {
                     int *leftOffset = &leftmap[i].first;
                     *leftOffset = rightmap[i].first;
                 }
-                cout << leftmap[i].first << " & " << rightmap[i].first << endl;
             }
 
             // equal offsets, compare values.
@@ -168,18 +165,6 @@ int evaluateInput() {
             int size = (int)_wrong.size();
             _wrong.resize(size+1);
             _wrong[size] = i+1;
-
-
-            cout << i+1 << ": " << endl;
-            for(int i=0; i<left.length(); i++) cout << left[i];
-            cout << endl;
-            for(int i=0; i<right.length(); i++) cout << right[i];
-            cout << endl << endl;
-
-        }
-
-        else {
-            cout << "*****************" << endl;
         }
     }
     int sum = 0;
