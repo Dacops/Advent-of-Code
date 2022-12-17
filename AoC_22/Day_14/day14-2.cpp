@@ -49,6 +49,7 @@ void parseInput() {
 
 void buildMatrix() {
 
+    // just make the matrix huge, skip 14-1 optimizations
     _occupied.resize(maxY+1+2);         // floor = y+2
     for(int i=0; i<(int)_occupied.size(); i++) _occupied[i].resize((maxX*2)+1);
 
@@ -123,7 +124,7 @@ bool addUnit(int x, int y) {
     if(_occupied[y][x]) return false;           // starting point is full
 
     while(1) {                                  // drop sand
-        
+
         if (!_occupied[y+1][x]) {               // drop downwards
             y++;
         }
