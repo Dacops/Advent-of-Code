@@ -11,7 +11,7 @@ using namespace std;
 int evaluateInput() {
 
     string line;
-    vector<int> numbers;
+    int answer = 0;
     unordered_map<string, int> dict = {
         {"one", 1}, {"two", 2}, {"three", 3}, 
         {"four", 4}, {"five", 5}, {"six", 6}, 
@@ -58,10 +58,10 @@ int evaluateInput() {
         (minNum.first < minWord.first) ? number = minNum.second*10 : number = minWord.second*10;
         (maxNum.first > maxWord.first) ? number += maxNum.second : number += maxWord.second;;
 
-        numbers.push_back(number);
+        answer += number;
     }
 
-    return accumulate(numbers.begin(), numbers.end(), 0);
+    return answer;
 }
 
 

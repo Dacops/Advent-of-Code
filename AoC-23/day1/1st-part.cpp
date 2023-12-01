@@ -8,7 +8,7 @@ using namespace std;
 int evaluateInput() {
 
     string line;
-    vector<int> numbers;
+    int answer = 0;
 
     while (getline(cin, line)) {
 
@@ -19,10 +19,10 @@ int evaluateInput() {
                 number = first*10 + (c-48);
             }
         }
-        numbers.push_back(number);
+        answer += number;
     }
 
-    return accumulate(numbers.begin(), numbers.end(), 0);
+    return answer;
 }
 
 
