@@ -36,9 +36,9 @@ int evaluateInput() {
 
         x = 0;
         for (const char& c : line) {
-            if (c>=48 && c<=57) {
+            if (c>='0' && c<='9') {
                 length++;
-                number = number*10 + (c-48);
+                number = number*10 + (c-'0');
             } else {
                 // input in CRLF instead of LF, getline doesn't remove CR, still can check EOL
 

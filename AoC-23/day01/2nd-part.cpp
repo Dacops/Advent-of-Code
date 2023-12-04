@@ -34,14 +34,14 @@ int evaluateInput() {
         int index = 0;
         pair<int, int> minNum = {INT_MAX, 0}, maxNum = {INT_MIN, 0};
         for (const char& c : line) {
-            if (c >= 49 && c <= 57) {
+            if (c >= '0' && c <= '9') {
                 if (index < minNum.first) {
                     minNum.first = index;
-                    minNum.second = c-48;
+                    minNum.second = c-'0';
                 }
                 if (index > maxNum.first) {
                     maxNum.first = index;
-                    maxNum.second = c-48;
+                    maxNum.second = c-'0';
                 }
             }
             index++;

@@ -27,10 +27,10 @@ int evaluateGame(const string& game) {
         while (pos != (int)string::npos) {
             
             int number = 0;
-            if (game[pos-3] >= 49 && game[pos-3] <= 57) {
-                number = (game[pos-3] - 48)*10;
+            if (game[pos-3] >= '0' && game[pos-3] <= '9') {
+                number = (game[pos-3] - '0')*10;
             }
-            number += game[pos-2] - 48;
+            number += game[pos-2] - '0';
             
             if (number > maxColour[colour.first]) {
                 maxColour[colour.first] = number;
