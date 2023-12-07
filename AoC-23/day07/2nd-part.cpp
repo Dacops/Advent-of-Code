@@ -65,7 +65,6 @@ struct hand {
 int evaluateInput() {
 
     string line;
-    int lineNum = 0;
     vector<hand> hands;
 
     while (getline(cin, line)) {
@@ -90,7 +89,7 @@ int evaluateInput() {
     sort(hands.begin(), hands.end());
 
     int answer = 0;
-    for (auto i=0; i<hands.size(); i++) {
+    for (auto i=0; i<(int)hands.size(); i++) {
         answer += hands[i].value * (i+1);
     }
 
