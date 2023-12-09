@@ -8,6 +8,8 @@
         "algorithm": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "xhash": "cpp",
+        "string": "cpp"
     }
 }
