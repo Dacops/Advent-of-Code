@@ -61,26 +61,37 @@ int evaluateInput() {
     vector<vector<node>> survey(input.size(), vector<node>(input[0].size(), node{false, false, false}));
 
     // get surrounding positions; [0]:N, [1]:E, [2]:S, [3]:W
-    int at_s = 0, to = -1, from = -1;
-    while (!at_s) {
+    int to = 0, from = 0;
 
-        // get surrounding pipes
-        vector<char> surrounding(4, '.');
-        if(y>0) surrounding[0] = input[y-1][x];
-        if(x<(int)input[y].size()-1) surrounding[1] = input[y][x+1];
-        if(y<(int)input.size()-1) surrounding[2] = input[y+1][x];
-        if(x>0) surrounding[3] = input[y][x-1];
+    // get first move (check all surrounding pipes), from now onwards only need to follow the pipe
+    // get surrounding pipes
+    vector<char> surrounding(4, '.');
+    if(y>0) surrounding[0] = input[y-1][x];
+    if(x<(int)input[y].size()-1) surrounding[1] = input[y][x+1];
+    if(y<(int)input.size()-1) surrounding[2] = input[y+1][x];
+    if(x>0) surrounding[3] = input[y][x-1];
 
-        // move to next position
-        for (int i=0; i<4; i++) {
-            if (adj_pipes[i].find(surrounding[i]) != string::npos) {
-                if (i==0 && from!=i && (to==0 || to==-1)) { from=2; to=pipe_to0[surrounding[i]]; y--; break; }
-                if (i==1 && from!=i && (to==1 || to==-1)) { from=3; to=pipe_to1[surrounding[i]]; x++; break; }
-                if (i==2 && from!=i && (to==2 || to==-1)) { from=0; to=pipe_to2[surrounding[i]]; y++; break; }
-                if (i==3 && from!=i && (to==3 || to==-1)) { from=1; to=pipe_to3[surrounding[i]]; x--; break; }
-            }
+    // move to next position
+    for (int i=0; i<4; i++) {
+        if (adj_pipes[i].find(surrounding[i]) != string::npos) {
+            if (i==0) { to=pipe_to0[surrounding[i]]; y--; break; }
+            if (i==1) { to=pipe_to1[surrounding[i]]; x++; break; }
+            if (i==2) { to=pipe_to2[surrounding[i]]; y++; break; }
+            if (i==3) { to=pipe_to3[surrounding[i]]; x--; break; }
         }
-        if (input[y][x] == 'S') at_s++;
+    }
+
+    // "take" 'S'
+    survey[y][x].taken = true;
+
+    for(;;) {
+
+        if (to==0) { from=2; to=pipe_to0[input[y-1][x]]; y--; }
+        else if (to==1) { from=3; to=pipe_to1[input[y][x+1]]; x++; }
+        else if (to==2) { from=0; to=pipe_to2[input[y+1][x]]; y++; }
+        else if (to==3) { from=1; to=pipe_to3[input[y][x-1]]; x--; }
+
+        if (input[y][x] == 'S') break;
 
         // part 2
         survey[y][x].taken = true;
