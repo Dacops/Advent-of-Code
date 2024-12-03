@@ -1,9 +1,9 @@
 def star1(file):
     with open(file, 'r') as f:
-        vals = f.readlines()
+        lines = f.readlines()
 
     left, right = [], []
-    for pair in vals:
+    for pair in lines:
         pair = pair.strip()
         pair = pair.split('   ')
         left.append(pair[0])
@@ -13,17 +13,17 @@ def star1(file):
     right.sort()
 
     val = 0
-    for vals in zip(left, right):
-        val += abs(int(vals[0]) - int(vals[1]))
+    for l,r in zip(left, right):
+        val += abs(int(l) - int(r))
 
     return val
 
 def star2(file):
     with open(file, 'r') as f:
-        vals = f.readlines()
+        lines = f.readlines()
 
     left, right = [], {}
-    for pair in vals:
+    for pair in lines:
         pair = pair.strip()
         pair = pair.split('   ')
         left.append(pair[0])
@@ -34,9 +34,9 @@ def star2(file):
             right[pair[1]] += 1
 
     val = 0
-    for vals in left:
-        if vals in right:
-            val += int(vals) * right[vals]
+    for lines in left:
+        if lines in right:
+            val += int(lines) * right[lines]
 
     return val
 

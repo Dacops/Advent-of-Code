@@ -18,10 +18,10 @@ def valid_line(line):
 
 def star1(file):
     with open(file, 'r') as f:
-        vals = f.readlines()
+        lines = f.readlines()
 
     safe = 0
-    for line in vals:
+    for line in lines:
         line = line.strip()
         line = line.split(' ')
 
@@ -32,10 +32,10 @@ def star1(file):
 
 def star2(file):
     with open(file, 'r') as f:
-        vals = f.readlines()
+        lines = f.readlines()
 
     safe = 0
-    for line in vals:
+    for line in lines:
         line = line.strip()
         line = line.split(' ')
 
